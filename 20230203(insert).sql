@@ -33,5 +33,31 @@ delete from book_mst
 where book_id = 477;
 
 
+select * from book_mst;
 
-    
+/*
+	1. 어디(데이터베이스.테이블)에 추가를 할 것인가?
+	2. 컬럼은 어떻게 구성이 되어 있으며 원하는 컬럼에 데이터를 추가하려면 어떻게 해야하는가?
+	소록-905 / 테스트 도서5 / 테스터5 / 테스트5 / 2023-02-03 / 기타 / 40000
+*/
+
+insert into book_mst
+values 
+	(0, '소록-905', '테스트 도서5', '테스터5', '테스트5', '2023-02-03', '기타', 40000);
+
+select
+	book_id,
+	book_code,
+    book_name,
+    author_name
+from
+	book_mst
+where
+	book_id < 5
+
+
+
+
+
+
+
