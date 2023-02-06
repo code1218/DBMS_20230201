@@ -46,16 +46,64 @@ values
 	(0, '소록-905', '테스트 도서5', '테스터5', '테스트5', '2023-02-03', '기타', 40000);
 
 select
-	book_id,
-	book_code,
-    book_name,
-    author_name
+	*
 from
 	book_mst
 where
-	book_id < 5
+	author_name = '테스터'
+or	(book_id < 100 
+and book_code = '소록-50');
 
 
+select
+	*
+from
+	book_mst
+where
+	book_name like '%세%상%';
+
+select
+	*
+from
+	book_mst
+where
+	category_name like '%소설%'
+or	category_name = '아동'
+or	category_name = '경제/경영';
+
+select
+	*
+from
+	book_mst
+where
+	category_name in ('소설', '아동', '경제/경영');
+
+insert into book_mst(book_id, book_code)
+values (0, '소록-906');
+
+select
+	*
+from
+	book_mst
+where
+	book_name is not null;
+    
+select
+	*
+from
+	book_mst
+where
+	not book_name is null;
+	
+update book_mst 
+set 
+	book_name = '다시 바꾼 도서명', 
+    author_name = '바꾼 저자명' 
+where 
+	book_id = 482;
+
+
+select * from book_mst;
 
 
 
