@@ -97,13 +97,21 @@ where
 	
 update book_mst 
 set 
-	book_name = '다시 바꾼 도서명', 
-    author_name = '바꾼 저자명' 
+	book_name = '다시 바꾼 도서명',
+    author_name = '바꾼 저자명'
 where 
 	book_id = 482;
 
+select 
+	*
+from
+	book_mst;
 
-select * from book_mst;
+
+
+
+
+
 
 
 
