@@ -33,6 +33,40 @@ from
     left outer join author_mst am on(am.author_id = bm.author_id)
     left outer join publisher_mst pm on(pm.publisher_id = bm.publisher_id);
     
+update
+	book_dtl bd, category_mst cm
+set
+	bd.category_name = cm.category_id
+where
+	bd.category_name = cm.category_name;
+
+
+select
+	*
+from
+	book_dtl;
+    
+update
+	book_dtl bd, (select
+					bm.book_id,
+                    bm.book_name,
+                    am.author_name,
+                    pm.publisher_name
+				from
+					book_mst bm
+                    left outer join author_mst am on(am.author_id = bm.author_id)
+                    left outer join publisher_mst pm on(pm.publisher_id = bm.publisher_id)
+				) bm2
+set
+	bd.book_name = bm2.book_id
+where
+	bd.book_name = bm2.book_name
+and	bd.author_name = bm2.author_name
+and bd.publisher_name = bm2.publisher_name;
+
+
+
+
 
 
 

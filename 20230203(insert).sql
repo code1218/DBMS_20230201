@@ -105,7 +105,7 @@ where
 select 
 	*
 from
-	book_mst;
+	book;
 
 
 
